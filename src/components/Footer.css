@@ -1,0 +1,101 @@
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 60px 0 30px;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-section { display: flex; flex-direction: column; }
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.footer-social { display: flex; gap: 15px; }
+
+.social-link {
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: var(--transition);
+  color: rgba(255, 255, 255, 0.8);
+}
+.social-link:hover { transform: translateY(-3px); color: var(--white); }
+
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+.footer-links a:hover { color: var(--white); padding-left: 5px; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.footer-legal { display: flex; gap: 25px; }
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+.footer-legal a:hover { color: var(--white); }
+
+@media (max-width: 968px) {
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+  .footer-content { grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-legal { flex-direction: column; gap: 10px; }
+}

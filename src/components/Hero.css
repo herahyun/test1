@@ -1,0 +1,96 @@
+.hero {
+  position: relative;
+  margin-top: 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0;
+  max-width: 600px;
+  animation: fadeInUp 0.9s ease-out;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.btn-hero {
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.btn-hero:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.hero-carousel-dots {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active { background-color: var(--white); }
+.dot:hover { background-color: rgba(255, 255, 255, 0.9); }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 968px) {
+  .hero { min-height: 56vh; }
+  .hero-title { font-size: 3rem; }
+  .hero-subtitle { font-size: 1.05rem; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 50vh; }
+  .hero-title { font-size: 2.1rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-carousel-dots { display: none; }
+}
